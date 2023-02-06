@@ -1,5 +1,5 @@
 import os
-from flask import Flask, jsonify, send_from_directory, request
+from flask import Flask, jsonify, send_from_directory, request, render_template
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.utils import secure_filename
 
@@ -24,9 +24,9 @@ class User(db.Model):
     with app.app_context():
         db.create_all()
 
-@app.route("/")
-def hello_world():
-    return jsonify(hello="world")
+@app.route('/')
+def index():
+    return render_template('index.html')
 
 @app.route("/static/<path:filename>")
 def staticfiles(filename):
