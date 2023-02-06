@@ -1,0 +1,8 @@
+---
+title: "Done!"
+date: 2019-11-27
+published: true
+---
+One more bootcamp blog post to cap things off. Somehow the last 5 months were both the longest and fastest 5 months of my life I think. The amount of stuff I’ve learned and the skills I’ve developed over the last 5 months is incredible. Now that I’m about to embark on my continuing self-education and job search I can say that I feel like attending Flatiron School was definitely worth the financial and time investment. I know that a lot of bootcamp doubters say that you can learn all of the same stuff for free, and while that is true to an extent, there is no way that I would’ve been able to figure out an entire course track, find quality learning material, or find a mentor to guide me through building apps with various tech stacks, nor would I have gotten access to any kind of career coaching as I do with Flatiron. I know that there is still a lot of hard word ahead before I land a developer job somewhere but I feel ready for the challenge.
+
+I have a growing list of things tackle in my continued education, and much to my surprise, we were given access to a Computer Science course track which actually seems to cover a lot of the material that people complain is usually missing from bootcamps. There are sections on Sorting Algorithms and Data Analysis with plenty of material to cover. First steps, though, will be focused on my resume and polishing off all of my profile projects, followed by getting up to date on React hooks.

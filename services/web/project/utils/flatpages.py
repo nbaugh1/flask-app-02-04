@@ -4,7 +4,7 @@ FLATPAGES_AUTO_RELOAD = DEBUG
 FLATPAGES_EXTENSION = '.md'
 
 class FlatPages():
-    def init():
-        pages = FlatPages()
+    def init(app):
+        flat_pages = FlatPages(app)
         
-        return pages
+        return flat_pages

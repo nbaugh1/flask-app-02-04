@@ -1,0 +1,10 @@
+---
+title: "Project 4: JavaScript/Rails API – Part I"
+published: true
+date: 2019-10-09
+---
+I’m just about to break out into the home stretch of my Flatiron School Software Engineering bootcamp. This is my 4th out of 5 portfolio project. This module focused on finally learning how to build a full-stack web application with a JavaScript/HTML/CSS frontend and a Ruby on Rails API backend. My plan for my project is to build a single page application for a photography portfolio website. This will be a simple site that that will organize photos into albums. I’ve decide break this blog post into multiple posts during development, hopefully with each post focused on a specific part of the process or stack.
+
+I’ve made it a point throughout my previous projects to focus on a sort of secondary, self-assigned objective for each project. For my first project, a Ruby CLI Gem, I kept it simple and just made an effort to do a little extra within the assigned requirements. For my second project, a Sinatra CRUD app using MVC design, I decided to focus on working with adding extra elements provided with working with a CSS framework, in this case Materialize. I also decided to implement some of the scraping functions I learned in the first Module. For my third project, a Rails web app, I decided to focus on learning how to use git properly, specifically working with branches and making meaningful commit messages (I also built an API adapter and queried a third party external API, and used Bootstrap for my layouts). Now finally for this project, I plan to focus on documenting my code properly. This is something that I have 100% ignored up to this point.
+
+I’ve just started this project, setup a basic file structure, generated a new Rails API for the back end, and initialized a new git repo for the project. My next set is to start setting up my database. Time to get back to it.
