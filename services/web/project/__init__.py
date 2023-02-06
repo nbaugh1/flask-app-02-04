@@ -1,15 +1,19 @@
 import os
-from flask import Flask, jsonify, send_from_directory, request
+from flask import Flask, jsonify, send_from_directory, request, render_template
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.utils import secure_filename
-
+from flask_flatpages import FlatPages
+import pdb
 
 db = SQLAlchemy()
 app = Flask(__name__)
+app.debug = True
 app.config.from_object("project.config.Config")
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///project.db"
+app.config['FLATPAGES_ROOT'] = 'content/blog/'
+app.config['FLATPAGES_EXTENSION'] = '.md'
 db.init_app(app)
-
+flatpages = FlatPages(app)
 
 class User(db.Model):
     __tablename__ = "users"
@@ -24,9 +28,9 @@ class User(db.Model):
     with app.app_context():
         db.create_all()
 
-@app.route("/")
-def hello_world():
-    return jsonify(hello="world")
+@app.route('/')
+def index():
+    return render_template('index.html')
 
 @app.route("/static/<path:filename>")
 def staticfiles(filename):
@@ -50,3 +54,8 @@ def upload_file():
       <p><input type=file name=file><input type=submit value=Upload>
     </form>
     """
+
+@app.route('/blog/<path:path>')
+def page(path):
+    post = flatpages.get_or_404(f"{path}/index")
+    return render_template('page.html', page=post)
