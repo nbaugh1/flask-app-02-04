@@ -3,6 +3,7 @@ from flask import Flask, jsonify, send_from_directory, request, render_template,
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.utils import secure_filename
 from flask_flatpages import FlatPages
+import datetime
 
 db = SQLAlchemy()
 app = Flask(__name__)
@@ -29,7 +30,8 @@ class User(db.Model):
 
 @app.route('/')
 def index():
-    return [page['title'] for page in flatpages]
+    posts = [p for p in flatpages if 'published' in p.meta]
+    return render_template('index.html', posts=posts)
 
 @app.route("/static/<path:filename>")
 def staticfiles(filename):
