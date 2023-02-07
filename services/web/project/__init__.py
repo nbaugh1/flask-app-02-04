@@ -1,4 +1,5 @@
 import os
+import re
 from flask import Flask, jsonify, send_from_directory, request, render_template, url_for
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.utils import secure_filename
@@ -31,6 +32,9 @@ class User(db.Model):
 @app.route('/')
 def index():
     posts = [p for p in flatpages if 'published' in p.meta]
+    for post in posts:
+        post_path = post.path
+        post.path = _update_post_path(post_path)
     return render_template('index.html', posts=posts)
 
 @app.route("/static/<path:filename>")
@@ -60,3 +64,6 @@ def upload_file():
 def page(path):
     post = flatpages.get_or_404(f"{path}/index")
     return render_template('page.html', page=post)
+
+def _update_post_path(path):
+    return re.sub(r'(.*)/index', r'blog/\1', path)
