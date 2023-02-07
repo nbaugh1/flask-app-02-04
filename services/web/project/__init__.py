@@ -1,16 +1,15 @@
 import os
-from flask import Flask, jsonify, send_from_directory, request, render_template
+from flask import Flask, jsonify, send_from_directory, request, render_template, url_for
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.utils import secure_filename
 from flask_flatpages import FlatPages
-import pdb
 
 db = SQLAlchemy()
 app = Flask(__name__)
 app.debug = True
 app.config.from_object("project.config.Config")
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///project.db"
-app.config['FLATPAGES_ROOT'] = 'content/blog/'
+app.config['FLATPAGES_ROOT'] = 'static/content/blog/'
 app.config['FLATPAGES_EXTENSION'] = '.md'
 db.init_app(app)
 flatpages = FlatPages(app)
@@ -30,7 +29,7 @@ class User(db.Model):
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return [page['title'] for page in flatpages]
 
 @app.route("/static/<path:filename>")
 def staticfiles(filename):

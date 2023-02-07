@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-<p> This is a post page from the page.html file </p>
+
+<h1>{{ page.meta['title'] }}</h1>
+<sub>{{ page.meta['date'] }}</sub>
 {{ page.html|safe }}
 
 {% endblock %}

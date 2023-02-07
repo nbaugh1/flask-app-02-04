@@ -1,5 +1,6 @@
 Flask==2.2.2
 Flask-SQLAlchemy==3.0.3
+flask_flatpages==0.8.1
+Frozen-Flask==0.18
 gunicorn==20.1.0
 psycopg2-binary==2.9.4
-flask_flatpages==0.8.1

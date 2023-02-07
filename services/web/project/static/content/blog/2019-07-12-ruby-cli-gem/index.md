@@ -1,8 +1,8 @@
----
 title: "Project 1: Ruby CLI Gem"
 date: 2019-07-12
 published: true
----
+
+
 For our first end of portfolio project we have been assigned to create a Ruby CLI Data Gem. 
 I wanted the subject matter of my project to be somewhat original and to be something that I find interesting and useful. Being the political junkie that I am, I immediately thought of the huge field of Democratic candidates running for president in the 2020 election. I decided it would be useful to write an app that presents the user with information about the individual candidate’s campaigns.
 
